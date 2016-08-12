@@ -5,6 +5,7 @@ using System.Collections;
 public class PlayerController : MonoBehaviour {
     public Animator Anim;
     public bool CanPlay;
+    public Character LocalCharacter;
 	// Use this for initialization
 	void Start () {
 	

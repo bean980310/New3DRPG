@@ -8,14 +8,18 @@ public class GameManager : MonoBehaviour {
     bool ShowCharWheel;
     public int SelectedCharacter;
     int LastCharacter;
+    public static GameManager Instance;
+    public bool CanShowSwitch = true;
+
 
     void Awake()
     {
+        Instance = this;
         foreach (Character c in Characters)
         {
             c.Instance = Instantiate(c.PlayerPrefab, c.HomeSpawn.position, c.HomeSpawn.rotation) as GameObject;
         }
-        ChangeCharacter(Characters[PlayerPrefs.GetInt("SelectedChar")]);
+        ChangeCharacterStart(Characters[PlayerPrefs.GetInt("SelectedChar")]);
     }
 	// Use this for initialization
 	void Start () {
@@ -27,13 +31,15 @@ public class GameManager : MonoBehaviour {
         if (Input.GetKey(KeyCode.C))
         {
             ShowCharWheel = true;
+            Time.timeScale = 0.5f;
         }
         else
         {
             ShowCharWheel = false;
-        }      
+            Time.timeScale = 1;
+        }
 	}
-    void ChangeCharacter(Character c)
+    void ChangeCharacterStart(Character c)
     {
         LastCharacter = SelectedCharacter;
         SelectedCharacter = Characters.IndexOf(c);
@@ -42,10 +48,32 @@ public class GameManager : MonoBehaviour {
         Camera.main.GetComponent<SmoothFollow>().target = Characters[SelectedCharacter].Instance.transform;
         PlayerPrefs.SetInt("SelectedChar", SelectedCharacter);
     }
+    void ChangeCharacter(Character c)
+    {
+        if (Vector3.Distance(Characters[SelectedCharacter].Instance.transform.position, c.Instance.transform.position) > 10)
+        {
+            SequenceManager.Instance.StartCoroutine("DoCharSwitch", c);
+            CanShowSwitch = false;
+            LastCharacter = SelectedCharacter;
+            SelectedCharacter = Characters.IndexOf(c);
+            Characters[LastCharacter].Instance.GetComponent<PlayerController>().CanPlay = false;
+            Characters[SelectedCharacter].Instance.GetComponent<PlayerController>().CanPlay = true;
+            PlayerPrefs.SetInt("SelectedChar", SelectedCharacter);
+        }
+        else
+        {
+            LastCharacter = SelectedCharacter;
+            SelectedCharacter = Characters.IndexOf(c);
+            Characters[LastCharacter].Instance.GetComponent<PlayerController>().CanPlay = false;
+            Characters[SelectedCharacter].Instance.GetComponent<PlayerController>().CanPlay = true;
+            PlayerPrefs.SetInt("SelectedChar", SelectedCharacter);
+            Camera.main.GetComponent<SmoothFollow>().target = Characters[SelectedCharacter].Instance.transform;     
+        }
+    }
 
     void OnGUI()
     {
-        if (ShowCharWheel)
+        if (ShowCharWheel && CanShowSwitch) 
         {
             GUILayout.BeginArea(new Rect(Screen.width - 64, Screen.height - 192, 64, 192));
             foreach(Character c in Characters)
