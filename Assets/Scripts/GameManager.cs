@@ -23,10 +23,10 @@ public class GameManager : MonoBehaviour {
     {
         if (ShowCharWheel)
         {
-            GUILayout.BeginArea(new Rect(Screen.width/2, Screen.height/2, 512, 512), "box");
+            GUILayout.BeginArea(new Rect(Screen.width - 64, Screen.height - 96, 64, 192), GUIContent.none, "box");
             foreach(Character c in Characters)
             {
-                if (GUILayout.Button(c.Name))
+                if (GUILayout.Button(c.Icon,GUILayout.Width(64),GUILayout.Height(64)))
                 {
                     SelectedCharacter = Characters.IndexOf(c);
                 }
