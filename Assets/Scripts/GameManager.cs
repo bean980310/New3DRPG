@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour {
         foreach (Character c in Characters)
         {
             c.Instance = Instantiate(c.PlayerPrefab, c.HomeSpawn.position, c.HomeSpawn.rotation) as GameObject;
+            c.Instance.GetComponent<PlayerController>().LocalCharacter = c;
         }
         ChangeCharacterStart(Characters[PlayerPrefs.GetInt("SelectedChar")]);
     }
