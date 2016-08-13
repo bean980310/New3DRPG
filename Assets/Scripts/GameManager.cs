@@ -5,6 +5,8 @@ using UnityStandardAssets.Utility;
 
 public class GameManager : MonoBehaviour {
     public List<Character> Characters = new List<Character>();
+    public List<Item> AllItems = new List<Item>();
+    public Character CurrentCharacter;
     bool ShowCharWheel;
     public int SelectedCharacter;
     int LastCharacter;
@@ -44,6 +46,7 @@ public class GameManager : MonoBehaviour {
     {
         LastCharacter = SelectedCharacter;
         SelectedCharacter = Characters.IndexOf(c);
+        CurrentCharacter = c;
         Characters[LastCharacter].Instance.GetComponent<PlayerController>().CanPlay = false;
         Characters[SelectedCharacter].Instance.GetComponent<PlayerController>().CanPlay = true;
         Camera.main.GetComponent<SmoothFollow>().target = Characters[SelectedCharacter].Instance.transform;
@@ -58,6 +61,7 @@ public class GameManager : MonoBehaviour {
             CanShowSwitch = false;
             LastCharacter = SelectedCharacter;
             SelectedCharacter = Characters.IndexOf(c);
+            CurrentCharacter = c;
             Characters[LastCharacter].Instance.GetComponent<PlayerController>().CanPlay = false;
             Characters[SelectedCharacter].Instance.GetComponent<PlayerController>().CanPlay = true;
             PlayerPrefs.SetInt("SelectedChar", SelectedCharacter);
@@ -66,6 +70,7 @@ public class GameManager : MonoBehaviour {
         {
             LastCharacter = SelectedCharacter;
             SelectedCharacter = Characters.IndexOf(c);
+            CurrentCharacter = c;
             Characters[LastCharacter].Instance.GetComponent<PlayerController>().CanPlay = false;
             Characters[SelectedCharacter].Instance.GetComponent<PlayerController>().CanPlay = true;
             PlayerPrefs.SetInt("SelectedChar", SelectedCharacter);
@@ -97,4 +102,12 @@ public class Character
     public GameObject PlayerPrefab;
     public GameObject Instance;
     public Transform HomeSpawn;
+}
+
+[System.Serializable]
+public class Item
+{
+    public string Name;
+    public Texture2D Icon;
+    public ItemInstance InstancePrefab;
 }

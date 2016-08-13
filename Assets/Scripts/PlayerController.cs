@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(CapsuleCollider))]
 public class PlayerController : MonoBehaviour {
@@ -7,8 +9,18 @@ public class PlayerController : MonoBehaviour {
     public bool CanPlay;
     public Character LocalCharacter;
 
+    private List<Item> _inventory = new List<Item>();
+
     public float v;
     public float h;
+
+    public List<Item> Inventory
+    {
+        get
+        {
+            return _inventory;
+        }
+    }
     // Use this for initialization
     void Start () {
 	
