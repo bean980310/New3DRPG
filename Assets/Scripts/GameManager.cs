@@ -51,6 +51,7 @@ public class GameManager : MonoBehaviour {
     }
     void ChangeCharacter(Character c)
     {
+        c.Instance.GetComponent<AI>().DoneHome = false;
         if (Vector3.Distance(Characters[SelectedCharacter].Instance.transform.position, c.Instance.transform.position) > 10)
         {
             SequenceManager.Instance.StartCoroutine("DoCharSwitch", c);
