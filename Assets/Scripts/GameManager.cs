@@ -13,14 +13,15 @@ public class GameManager : MonoBehaviour {
     public static GameManager Instance;
     public bool CanShowSwitch = true;
 
-
+    public LootChest SelectedChest;
     void Awake()
     {
         Instance = this;
         foreach (Character c in Characters)
         {
-            c.Instance = Instantiate(c.PlayerPrefab, c.HomeSpawn.position, c.HomeSpawn.rotation) as GameObject;
-            c.Instance.GetComponent<PlayerController>().LocalCharacter = c;
+            GameObject go = Instantiate(c.PlayerPrefab, c.HomeSpawn.position, c.HomeSpawn.rotation) as GameObject;
+            c.Instance = go.GetComponent<PlayerController>();
+            c.Instance.LocalCharacter = c;
         }
         ChangeCharacterStart(Characters[PlayerPrefs.GetInt("SelectedChar")]);
     }
@@ -100,7 +101,7 @@ public class Character
     public string Name;
     public Texture2D Icon;
     public GameObject PlayerPrefab;
-    public GameObject Instance;
+    public PlayerController Instance;
     public Transform HomeSpawn;
 }
 
