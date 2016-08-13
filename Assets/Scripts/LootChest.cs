@@ -44,10 +44,10 @@ public class LootChest : MonoBehaviour {
                 DeSelect();
             }
         }
-        if (Items.Count <= 0)
-        {
-            Destroy(gameObject);
-        }
+        //if (Items.Count <= 0)
+        //{
+        //    Destroy(gameObject);
+        //}
     }
     void OnMouseOver()
     {

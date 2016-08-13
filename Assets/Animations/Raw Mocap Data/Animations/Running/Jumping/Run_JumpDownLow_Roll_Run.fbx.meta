@@ -170,7 +170,9 @@ ModelImporter:
     optimizeGameObjects: 0
     motionNodeName: 
     animationImportErrors: 
-    animationImportWarnings: 
+    animationImportWarnings: "\nDefault bone length found in this file is different
+      form the one found in the source avatar:\n\t'LeftLeg' : position error = 7.696520
+      mm\n\t'LeftFoot' : position error = 15.233778 mm\n"
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     animationCompression: 1
@@ -184,7 +186,7 @@ ModelImporter:
       name: Run_JumpDownLow_Roll_Run
       takeName: _210_Run_JumpDownLow_Roll_Run
       firstFrame: 75
-      lastFrame: 186
+      lastFrame: 179
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -207,7 +209,7 @@ ModelImporter:
       transformMask: []
       maskType: 0
       maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
+      additiveReferencePoseFrame: 75
     isReadable: 1
   meshes:
     lODScreenPercentages: []

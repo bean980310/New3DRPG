@@ -110,5 +110,6 @@ public class Item
 {
     public string Name;
     public Texture2D Icon;
+    public bool Selectable;
     public ItemInstance InstancePrefab;
 }

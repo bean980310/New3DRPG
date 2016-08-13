@@ -9,6 +9,9 @@ public class PlayerController : MonoBehaviour {
     public bool CanPlay;
     public Character LocalCharacter;
 
+    public Transform Hand;
+    public Transform GunSpawnPoint;
+
     private List<Item> _inventory = new List<Item>();
 
     public float v;
@@ -21,6 +24,24 @@ public class PlayerController : MonoBehaviour {
             return _inventory;
         }
     }
+
+    private Item _inhand;
+    public Item InHand
+    {
+        get
+        {
+            return _inhand;
+        }
+        set
+        {
+            _inhand = value;
+            Destroy(InHandInstance);
+            InHandInstance = Instantiate(value.InstancePrefab.gameObject, Hand.position, Hand.rotation) as GameObject;
+            InHandInstance.transform.parent = Hand;
+        }
+    }
+
+    private GameObject InHandInstance;
     // Use this for initialization
     void Start () {
 	
@@ -35,6 +56,8 @@ public class PlayerController : MonoBehaviour {
             Anim.SetFloat("Speed", v * 2);
             Anim.SetFloat("Direction", h);
             Anim.SetBool("Running", Input.GetKey(KeyCode.LeftShift));
+            Anim.SetBool("Jumping", Input.GetKeyDown(KeyCode.Space));
+            Anim.SetBool("Jumping", Input.GetKey(KeyCode.Space));
         }
         else
         {

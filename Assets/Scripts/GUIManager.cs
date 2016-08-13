@@ -30,6 +30,11 @@ public class GUIManager : MonoBehaviour {
         if (ShowInventory)
         {
             InventoryRect = GUI.Window(_inventoryID, InventoryRect, InventoryWindow, "Inventory");
+            Time.timeScale = 0.5f;
+        }
+        else
+        {
+            Time.timeScale = 1;
         }
         if (GameManager.Instance.SelectedChest != null)
         {
@@ -46,7 +51,12 @@ public class GUIManager : MonoBehaviour {
             {
                 if (c < GameManager.Instance.CurrentCharacter.Instance.Inventory.Count)
                 {
-                    GUI.Button(new Rect(ButtonOffset + (ButtonWidth * x), ButtonOffset + (ButtonHeight * y), ButtonWidth, ButtonHeight), GameManager.Instance.CurrentCharacter.Instance.Inventory[cu].Name);
+                    if(GUI.Button(new Rect(ButtonOffset + (ButtonWidth * x), ButtonOffset + (ButtonHeight * y), ButtonWidth, ButtonHeight), GameManager.Instance.CurrentCharacter.Instance.Inventory[cu].Name)){
+                        if (GameManager.Instance.CurrentCharacter.Instance.Inventory[cu].Selectable)
+                        {
+                            GameManager.Instance.CurrentCharacter.Instance.InHand = GameManager.Instance.CurrentCharacter.Instance.Inventory[cu];
+                        }         
+                    }
                     cu++;
                 }
                 else
