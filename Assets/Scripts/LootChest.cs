@@ -7,6 +7,8 @@ public class LootChest : MonoBehaviour {
     int ItemCount;
     List<Item> Items = new List<Item>();
 
+    public int ID;
+
     public float Distance;
 
     public Color HoverColour;
@@ -14,12 +16,18 @@ public class LootChest : MonoBehaviour {
     Color DefaultColour;
     bool Selected;
 
+    public SerializableChest SChest;
+
     public List<Item> MyItems
     {
         get
         {
             return Items;
         }
+        //set
+        //{
+        //    SChest.MyItems = value;
+        //}
     }
 	// Use this for initialization
 	void Start () {
@@ -29,8 +37,13 @@ public class LootChest : MonoBehaviour {
             int r = Random.Range(0, GameManager.Instance.AllItems.Count - 1);
             Items.Add(GameManager.Instance.AllItems[r]);
         }
+        //SaveManager.Instance.SaveObj.Add(MyItems);
         DefaultColour = GetComponent<Renderer>().material.color;
-	}
+
+        SChest = new SerializableChest(MyItems, ID);
+
+        SaveManager.Instance.chests.Add(SChest);
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -85,5 +98,60 @@ public class LootChest : MonoBehaviour {
     //void OnGUI()
     //{
 
+    //}
+}
+
+[System.Serializable]
+public class SerializableChest
+{
+    [System.NonSerialized]
+    List<Item> Items = new List<Item>();
+
+    public List<Item> MyItems
+    {
+        get
+        {
+            return Items;
+        }
+        set
+        {
+            Items = value;
+            _MyItemsString.Clear();
+
+            foreach (Item i in MyItems)
+            {
+                Debug.Log(i.Name);
+                _MyItemsString.Add(i.Name);
+            }
+        }
+    }
+
+    List<string> _MyItemsString = new List<string>();
+    //public List<string> MyItemsString
+    //{
+    //    get
+    //    {
+    //        _MyItemsString.Clear();
+
+    //        foreach(Item i in MyItems)
+    //        {
+    //            Debug.Log(i.Name);
+    //            _MyItemsString.Add(i.Name);
+    //        }
+    //        return _MyItemsString;
+    //    }
+    //}
+
+    public int ID;
+
+    public SerializableChest(List<Item> items, int id)
+    {
+        MyItems = items;
+        ID = id;
+    }
+
+    //public static SerializableChest FindChestWithID(int id)
+    //{
+        
     //}
 }

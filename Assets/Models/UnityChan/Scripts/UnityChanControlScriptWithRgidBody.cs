@@ -39,15 +39,15 @@ public class UnityChanControlScriptWithRgidBody : MonoBehaviour
 	private Vector3 orgVectColCenter;
 	
 	private Animator anim;							// キャラにアタッチされるアニメーターへの参照
-	private AnimatorStateInfo currentBaseState;			// base layerで使われる、アニメーターの現在の状態の参照
+	//private AnimatorStateInfo currentBaseState;			// base layerで使われる、アニメーターの現在の状態の参照
 
 	private GameObject cameraObject;	// メインカメラへの参照
 		
 // アニメーター各ステートへの参照
-	static int idleState = Animator.StringToHash("Base Layer.Idle");
-	static int locoState = Animator.StringToHash("Base Layer.Locomotion");
-	static int jumpState = Animator.StringToHash("Base Layer.Jump");
-	static int restState = Animator.StringToHash("Base Layer.Rest");
+	//static int idleState = Animator.StringToHash("Base Layer.Idle");
+	//static int locoState = Animator.StringToHash("Base Layer.Locomotion");
+	//static int jumpState = Animator.StringToHash("Base Layer.Jump");
+	//static int restState = Animator.StringToHash("Base Layer.Rest");
 
 // 初期化
 	void Start ()
@@ -73,7 +73,7 @@ public class UnityChanControlScriptWithRgidBody : MonoBehaviour
 		anim.SetFloat("Speed", v);							// Animator側で設定している"Speed"パラメタにvを渡す
 		anim.SetFloat("Direction", h); 						// Animator側で設定している"Direction"パラメタにhを渡す
 		anim.speed = animSpeed;								// Animatorのモーション再生速度に animSpeedを設定する
-		currentBaseState = anim.GetCurrentAnimatorStateInfo(0);	// 参照用のステート変数にBase Layer (0)の現在のステートを設定する
+		//currentBaseState = anim.GetCurrentAnimatorStateInfo(0);	// 参照用のステート変数にBase Layer (0)の現在のステートを設定する
 		rb.useGravity = true;//ジャンプ中に重力を切るので、それ以外は重力の影響を受けるようにする
 		
 		
@@ -92,14 +92,14 @@ public class UnityChanControlScriptWithRgidBody : MonoBehaviour
 		if (Input.GetButtonDown("Jump")) {	// スペースキーを入力したら
 
 			//アニメーションのステートがLocomotionの最中のみジャンプできる
-			if (currentBaseState.nameHash == locoState){
+			//if (currentBaseState.nameHash == locoState){
 				//ステート遷移中でなかったらジャンプできる
 				if(!anim.IsInTransition(0))
 				{
 						rb.AddForce(Vector3.up * jumpPower, ForceMode.VelocityChange);
 						anim.SetBool("Jump", true);		// Animatorにジャンプに切り替えるフラグを送る
 				}
-			}
+			//}
 		}
 		
 
@@ -113,15 +113,15 @@ public class UnityChanControlScriptWithRgidBody : MonoBehaviour
 		// 以下、Animatorの各ステート中での処理
 		// Locomotion中
 		// 現在のベースレイヤーがlocoStateの時
-		if (currentBaseState.nameHash == locoState){
+		//if (currentBaseState.nameHash == locoState){
 			//カーブでコライダ調整をしている時は、念のためにリセットする
 			if(useCurves){
 				resetCollider();
 			}
-		}
+		//}
 		// JUMP中の処理
 		// 現在のベースレイヤーがjumpStateの時
-		else if(currentBaseState.nameHash == jumpState)
+		//else if(currentBaseState.nameHash == jumpState)
 		{
 			cameraObject.SendMessage("setCameraPositionJumpView");	// ジャンプ中のカメラに変更
 			// ステートがトランジション中でない場合
@@ -162,7 +162,7 @@ public class UnityChanControlScriptWithRgidBody : MonoBehaviour
 		}
 		// IDLE中の処理
 		// 現在のベースレイヤーがidleStateの時
-		else if (currentBaseState.nameHash == idleState)
+		//else if (currentBaseState.nameHash == idleState)
 		{
 			//カーブでコライダ調整をしている時は、念のためにリセットする
 			if(useCurves){
@@ -175,7 +175,7 @@ public class UnityChanControlScriptWithRgidBody : MonoBehaviour
 		}
 		// REST中の処理
 		// 現在のベースレイヤーがrestStateの時
-		else if (currentBaseState.nameHash == restState)
+		//else if (currentBaseState.nameHash == restState)
 		{
 			//cameraObject.SendMessage("setCameraPositionFrontView");		// カメラを正面に切り替える
 			// ステートが遷移中でない場合、Rest bool値をリセットする（ループしないようにする）

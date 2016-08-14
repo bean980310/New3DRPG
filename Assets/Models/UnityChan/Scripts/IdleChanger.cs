@@ -15,8 +15,8 @@ public class IdleChanger : MonoBehaviour
 {
 	
 	private Animator anim;						// Animatorへの参照
-	private AnimatorStateInfo currentState;		// 現在のステート状態を保存する参照
-	private AnimatorStateInfo previousState;	// ひとつ前のステート状態を保存する参照
+	//private AnimatorStateInfo currentState;		// 現在のステート状態を保存する参照
+	//private AnimatorStateInfo previousState;	// ひとつ前のステート状態を保存する参照
 	public bool _random = false;				// ランダム判定スタートスイッチ
 	public float _threshold = 0.5f;				// ランダム判定の閾値
 	public float _interval = 2f;				// ランダム判定のインターバル
@@ -29,8 +29,8 @@ public class IdleChanger : MonoBehaviour
 	{
 		// 各参照の初期化
 		anim = GetComponent<Animator> ();
-		currentState = anim.GetCurrentAnimatorStateInfo (0);
-		previousState = currentState;
+		//currentState = anim.GetCurrentAnimatorStateInfo (0);
+		//previousState = currentState;
 		// ランダム判定用関数をスタートする
 		StartCoroutine ("RandomChange");
 	}
@@ -53,21 +53,21 @@ public class IdleChanger : MonoBehaviour
 		// "Next"フラグがtrueの時の処理
 		if (anim.GetBool ("Next")) {
 			// 現在のステートをチェックし、ステート名が違っていたらブーリアンをfalseに戻す
-			currentState = anim.GetCurrentAnimatorStateInfo (0);
-			if (previousState.nameHash != currentState.nameHash) {
+			//currentState = anim.GetCurrentAnimatorStateInfo (0);
+			//if (previousState.nameHash != currentState.nameHash) {
 				anim.SetBool ("Next", false);
-				previousState = currentState;				
-			}
+				//previousState = currentState;				
+			//}
 		}
 		
 		// "Back"フラグがtrueの時の処理
 		if (anim.GetBool ("Back")) {
 			// 現在のステートをチェックし、ステート名が違っていたらブーリアンをfalseに戻す
-			currentState = anim.GetCurrentAnimatorStateInfo (0);
-			if (previousState.nameHash != currentState.nameHash) {
+			//currentState = anim.GetCurrentAnimatorStateInfo (0);
+			//if (previousState.nameHash != currentState.nameHash) {
 				anim.SetBool ("Back", false);
-				previousState = currentState;
-			}
+				//previousState = currentState;
+			//}
 		}
 	}
 

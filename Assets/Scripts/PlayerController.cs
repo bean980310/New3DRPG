@@ -36,16 +36,44 @@ public class PlayerController : MonoBehaviour {
         {
             _inhand = value;
             Destroy(InHandInstance);
-            InHandInstance = Instantiate(value.InstancePrefab.gameObject, Hand.position, Hand.rotation) as GameObject;
-            InHandInstance.transform.parent = Hand;
+            if (value != null)
+            {
+                InHandInstance = Instantiate(value.InstancePrefab.gameObject, Hand.position, Hand.rotation) as GameObject;
+                InHandInstance.transform.parent = Hand;
+            }
+            if (GameManager.Instance.Characters.IndexOf(LocalCharacter) == 0)
+            {
+                SaveManager.Instance.p1_Hand = InHand;
+            }
+            if (GameManager.Instance.Characters.IndexOf(LocalCharacter) == 1)
+            {
+                SaveManager.Instance.p2_Hand = InHand;
+            }
+            if (GameManager.Instance.Characters.IndexOf(LocalCharacter) == 2)
+            {
+                SaveManager.Instance.p3_Hand = InHand;
+            }
         }
     }
 
     private GameObject InHandInstance;
     // Use this for initialization
     void Start () {
-	
-	}
+        //SaveManager.Instance.SaveObj.Add(InHand);
+        //SaveManager.Instance.SaveObj.Add(Inventory);
+        if (GameManager.Instance.Characters.IndexOf(LocalCharacter) == 0)
+        {
+            SaveManager.Instance.P1_Inventory = Inventory;
+        }
+        if (GameManager.Instance.Characters.IndexOf(LocalCharacter) == 1)
+        {
+            SaveManager.Instance.P2_Inventory = Inventory;
+        }
+        if (GameManager.Instance.Characters.IndexOf(LocalCharacter) == 2)
+        {
+            SaveManager.Instance.P3_Inventory = Inventory;
+        }
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -64,6 +92,7 @@ public class PlayerController : MonoBehaviour {
             Anim.SetFloat("Speed", v);
             Anim.SetFloat("Direction", h);
             Anim.SetBool("Running", false);
+            Anim.SetBool("Jumping", false);
         }
 	}
 }
