@@ -23,6 +23,8 @@ public class SaveManager : MonoBehaviour {
     void Awake()
     {
         Instance = this;
+        StartCoroutine("Load");
+        //Load();
     }
 	public void Save()
     {
@@ -52,11 +54,64 @@ public class SaveManager : MonoBehaviour {
         SaveObj.Add(chests);
         byte[] b = Serialize();
         File.WriteAllBytes(Application.persistentDataPath + path, b);
-        Debug.Log(path);
+        Debug.Log(Application.persistentDataPath + path);
     }
-    public void Load()
+    public IEnumerator Load()
     {
+        byte[] b = File.ReadAllBytes(Application.persistentDataPath + path);
+        List<object> o = DeSerialize(b);
+        p1_Hand = GameManager.Instance.FindItem((string)o[0]);
+        p2_Hand = GameManager.Instance.FindItem((string)o[1]);
+        p3_Hand = GameManager.Instance.FindItem((string)o[2]);
+        List<string> P1_string = new List<string>();
+        P1_string = (List<string>)o[3];
+        List<Item> p1_i = new List<Item>();
+        foreach (string str in P1_string)
+        {
+            p1_i.Add(GameManager.Instance.FindItem(str));
+        }
+        P1_Inventory = p1_i;
+        List<string> P2_string = new List<string>();
+        P2_string = (List<string>)o[4];
+        List<Item> p2_i = new List<Item>();
+        foreach (string str in P2_string)
+        {
+            p2_i.Add(GameManager.Instance.FindItem(str));
+        }
+        P2_Inventory = p2_i;
+        List<string> P3_string = new List<string>();
+        P3_string = (List<string>)o[5];
+        List<Item> p3_i = new List<Item>();
+        foreach (string str in P3_string)
+        {
+            p3_i.Add(GameManager.Instance.FindItem(str));
+        }
+        P3_Inventory = p3_i;
 
+        chests = (List<SerializableChest>)o[6];
+
+        foreach(SerializableChest sc in chests)
+        {
+            //Debug.Log(sc.ID);
+            Debug.Log(GameManager.Instance.FindChestWithID(sc.ID).HasGenerated);
+            while (GameManager.Instance.FindChestWithID(sc.ID).HasGenerated)
+            {
+                //Debug.Log(GameManager.Instance.FindChestWithID(sc.ID).HasGenerated);
+                yield return new WaitForEndOfFrame();
+                //Debug.Log(GameManager.Instance.FindChestWithID(sc.ID).HasGenerated);
+            }
+            GameManager.Instance.FindChestWithID(sc.ID).LoadItem(sc._MyItemsString);
+        }
+        GameManager.Instance.Characters[0].Instance.Inventory = P1_Inventory;
+        GameManager.Instance.Characters[0].Instance.InHand = p1_Hand;
+
+        GameManager.Instance.Characters[1].Instance.Inventory = P2_Inventory;
+        GameManager.Instance.Characters[1].Instance.InHand = p2_Hand;
+
+        GameManager.Instance.Characters[2].Instance.Inventory = P3_Inventory;
+        GameManager.Instance.Characters[2].Instance.InHand = p3_Hand;
+
+        StopCoroutine("Load");
     }
     byte[] Serialize()
     {

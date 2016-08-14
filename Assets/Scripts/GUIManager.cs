@@ -75,14 +75,18 @@ public class GUIManager : MonoBehaviour {
                         {
                             if (GameManager.Instance.SelectedChest != null)
                             {
-                                GameManager.Instance.SelectedChest.MyItems.Add(GameManager.Instance.CurrentCharacter.Instance.Inventory[cu]);
-                                if(GameManager.Instance.CurrentCharacter.Instance.InHand == GameManager.Instance.CurrentCharacter.Instance.Inventory[cu])
+                                if(GameManager.Instance.SelectedChest.MyItems.Count<GameManager.Instance.SelectedChest.MaxItems)
                                 {
-                                    GameManager.Instance.CurrentCharacter.Instance.InHand = null;
+                                    GameManager.Instance.SelectedChest.MyItems.Add(GameManager.Instance.CurrentCharacter.Instance.Inventory[cu]);
+                                    if (GameManager.Instance.CurrentCharacter.Instance.InHand == GameManager.Instance.CurrentCharacter.Instance.Inventory[cu])
+                                    {
+                                        GameManager.Instance.CurrentCharacter.Instance.InHand = null;
+                                    }
+                                    GameManager.Instance.CurrentCharacter.Instance.Inventory.Remove(GameManager.Instance.CurrentCharacter.Instance.Inventory[cu]);
                                 }
-                                GameManager.Instance.CurrentCharacter.Instance.Inventory.Remove(GameManager.Instance.CurrentCharacter.Instance.Inventory[cu]);
                             }
                         }
+                        GameManager.Instance.SelectedChest.UpdateSC();
                     }
                     cu++;
                 }
@@ -111,6 +115,7 @@ public class GUIManager : MonoBehaviour {
                     {
                         GameManager.Instance.CurrentCharacter.Instance.Inventory.Add(GameManager.Instance.SelectedChest.MyItems[c]);
                         GameManager.Instance.SelectedChest.MyItems.Remove(GameManager.Instance.SelectedChest.MyItems[c]);
+                        GameManager.Instance.SelectedChest.UpdateSC();
                     }
                     c++;
                 }

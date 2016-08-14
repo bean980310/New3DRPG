@@ -23,6 +23,10 @@ public class PlayerController : MonoBehaviour {
         {
             return _inventory;
         }
+        set
+        {
+            _inventory = value;
+        }
     }
 
     private Item _inhand;

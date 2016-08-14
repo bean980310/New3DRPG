@@ -18,6 +18,8 @@ public class LootChest : MonoBehaviour {
 
     public SerializableChest SChest;
 
+    public bool HasGenerated;
+
     public List<Item> MyItems
     {
         get
@@ -29,20 +31,23 @@ public class LootChest : MonoBehaviour {
         //    SChest.MyItems = value;
         //}
     }
+    public void UpdateSC()
+    {
+        SChest.MyItems = MyItems;
+    }
 	// Use this for initialization
 	void Start () {
         ItemCount = Random.Range(1, MaxItems);
-        for(int i = 0; i < ItemCount; i++)
+        for (int i = 0; i < ItemCount; i++)
         {
             int r = Random.Range(0, GameManager.Instance.AllItems.Count - 1);
             Items.Add(GameManager.Instance.AllItems[r]);
         }
-        //SaveManager.Instance.SaveObj.Add(MyItems);
         DefaultColour = GetComponent<Renderer>().material.color;
-
         SChest = new SerializableChest(MyItems, ID);
 
         SaveManager.Instance.chests.Add(SChest);
+        HasGenerated = true;
     }
 	
 	// Update is called once per frame
@@ -61,6 +66,15 @@ public class LootChest : MonoBehaviour {
         //{
         //    Destroy(gameObject);
         //}
+    }
+    public void LoadItem(List<string> i)
+    {
+        foreach (string str in i)
+        {
+            MyItems.Clear();
+            Items.Add(GameManager.Instance.FindItem(str));
+        }
+        UpdateSC();
     }
     void OnMouseOver()
     {
@@ -126,7 +140,7 @@ public class SerializableChest
         }
     }
 
-    List<string> _MyItemsString = new List<string>();
+    public List<string> _MyItemsString = new List<string>();
     //public List<string> MyItemsString
     //{
     //    get

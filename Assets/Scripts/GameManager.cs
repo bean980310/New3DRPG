@@ -6,6 +6,7 @@ using UnityStandardAssets.Utility;
 public class GameManager : MonoBehaviour {
     public List<Character> Characters = new List<Character>();
     public List<Item> AllItems = new List<Item>();
+    public LootChest[] AllChests;
     public Character CurrentCharacter;
     bool ShowCharWheel;
     public int SelectedCharacter;
@@ -17,6 +18,7 @@ public class GameManager : MonoBehaviour {
     void Awake()
     {
         Instance = this;
+        AllChests = FindObjectsOfType<LootChest>();
         foreach (Character c in Characters)
         {
             GameObject go = Instantiate(c.PlayerPrefab, c.HomeSpawn.position, c.HomeSpawn.rotation) as GameObject;
@@ -24,10 +26,24 @@ public class GameManager : MonoBehaviour {
             c.Instance.LocalCharacter = c;
         }
         ChangeCharacterStart(Characters[PlayerPrefs.GetInt("SelectedChar")]);
+
+        //SaveManager.Instance.Load();
     }
 	// Use this for initialization
 	void Start () {
         
+    }
+
+    public LootChest FindChestWithID(int id)
+    {
+        foreach(LootChest lc in AllChests)
+        {
+            if (lc.ID == id)
+            {
+                return lc;
+            }
+        }
+        return null;
     }
 	
 	// Update is called once per frame
@@ -93,6 +109,17 @@ public class GameManager : MonoBehaviour {
             }
             GUILayout.EndArea();
         }
+    }
+    public Item FindItem(string ItemName)
+    {
+        foreach(Item i in AllItems)
+        {
+            if(i.Name==ItemName)
+            {
+                return i;
+            }
+        }
+        return null;
     }
 }
 [System.Serializable]
