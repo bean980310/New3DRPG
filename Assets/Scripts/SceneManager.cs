@@ -9,11 +9,11 @@ public class SceneManager : MonoBehaviour {
     void OnGUI()
     {
         GUI.skin = start;
-        if(GUI.Button(new Rect(0,0,100,50),"Game Start")==true)
+        if(GUI.Button(new Rect(500,100,100,50),"Game Start")==true)
         {
             Application.LoadLevel("Start");
         }
-        if (GUI.Button(new Rect(0, 50, 100, 50), "Exit") == true)
+        if (GUI.Button(new Rect(500, 200, 100, 50), "Exit") == true)
         {
             Application.Quit();
         }
