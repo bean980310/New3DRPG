@@ -58,6 +58,11 @@ public class GameManager : MonoBehaviour {
             ShowCharWheel = false;
             Time.timeScale = 1;
         }
+
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            Application.LoadLevel("Title");
+        }
 	}
     void ChangeCharacterStart(Character c)
     {
