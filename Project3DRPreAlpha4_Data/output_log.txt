@@ -1,0 +1,433 @@
+Mono path[0] = 'C:/Users/bean9/Documents/New3DRPG/Project3DRPreAlpha4_Data/Managed'
+Mono path[1] = 'C:/Users/bean9/Documents/New3DRPG/Project3DRPreAlpha4_Data/Mono'
+Mono config path = 'C:/Users/bean9/Documents/New3DRPG/Project3DRPreAlpha4_Data/Mono/etc'
+PlayerConnection initialized from C:/Users/bean9/Documents/New3DRPG/Project3DRPreAlpha4_Data (debug = 0)
+PlayerConnection initialized network socket : 0.0.0.0 55396
+Multi-casting "[IP] 192.168.1.8 [Port] 55396 [Flags] 2 [Guid] 3100123364 [EditorId] 995427366 [Version] 1048832 [Id] WindowsPlayer(DESKTOP-T36IUE1) [Debug] 0" to [225.0.0.222:54997]...
+PlayerConnection already initialized - listening to [192.168.1.8:55396]
+Initialize engine version: 5.4.0f3 (a6d8d714de6f)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GT 710 (ID=0x128b)
+    Vendor:   NVIDIA
+    VRAM:     2017 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\bean9\Documents\New3DRPG\Project3DRPreAlpha4_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\bean9\Documents\New3DRPG\Project3DRPreAlpha4_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\bean9\Documents\New3DRPG\Project3DRPreAlpha4_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading C:\Users\bean9\Documents\New3DRPG\Project3DRPreAlpha4_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
+Platform assembly: C:\Users\bean9\Documents\New3DRPG\Project3DRPreAlpha4_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\bean9\Documents\New3DRPG\Project3DRPreAlpha4_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\bean9\Documents\New3DRPG\Project3DRPreAlpha4_Data\Managed\Assembly-UnityScript.dll (this message is harmless)
+Loading C:\Users\bean9\Documents\New3DRPG\Project3DRPreAlpha4_Data\Managed\Assembly-UnityScript.dll into Unity Child Domain
+Platform assembly: C:\Users\bean9\Documents\New3DRPG\Project3DRPreAlpha4_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\bean9\Documents\New3DRPG\Project3DRPreAlpha4_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\bean9\Documents\New3DRPG\Project3DRPreAlpha4_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\bean9\Documents\New3DRPG\Project3DRPreAlpha4_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\bean9\Documents\New3DRPG\Project3DRPreAlpha4_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
+Loading C:\Users\bean9\Documents\New3DRPG\Project3DRPreAlpha4_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
+- Completed reload, in  0.365 seconds
+Platform assembly: C:\Users\bean9\Documents\New3DRPG\Project3DRPreAlpha4_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\bean9\Documents\New3DRPG\Project3DRPreAlpha4_Data\Managed\System.dll (this message is harmless)
+Platform assembly: C:\Users\bean9\Documents\New3DRPG\Project3DRPreAlpha4_Data\Managed\System.Xml.dll (this message is harmless)
+desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
+<RI> Initializing input.
+XInput1_3.dll not found. Trying XInput9_1_0.dll instead...
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 1.194231 ms
+Setting up 1 worker threads for Enlighten.
+  Thread -> id: 2f54 -> priority: 1 
+Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.455277 ms
+IsolatedStorageException: Could not find file "C:\Users\bean9\AppData\LocalLow\DefaultCompany\New3DRPG\Save.tgtayt".
+  at System.IO.FileStream..ctor (System.String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, Boolean anonymous, FileOptions options) [0x00370] in /Users/builduser/buildslave/mono/build/mcs/class/corlib/System.IO/FileStream.cs:354 
+  at System.IO.FileStream..ctor (System.String path, FileMode mode, FileAccess access, FileShare share) [0x00000] in <filename unknown>:0 
+  at System.IO.File.OpenRead (System.String path) [0x00000] in /Users/builduser/buildslave/mono/build/mcs/class/corlib/System.IO/File.cs:363 
+  at System.IO.File.ReadAllBytes (System.String path) [0x00000] in /Users/builduser/buildslave/mono/build/mcs/class/corlib/System.IO/File.cs:538 
+  at SaveManager+<Load>c__Iterator1.MoveNext () [0x00023] in C:\Users\bean9\Documents\New3DRPG\Assets\Scripts\SaveManager.cs:61 
+  at UnityEngine.SetupCoroutine.InvokeMoveNext (IEnumerator enumerator, IntPtr returnValueAddress) [0x00020] in C:\buildslave\unity\build\Runtime\Export\Coroutines.cs:17 
+UnityEngine.MonoBehaviour:StartCoroutine(String, Object)
+UnityEngine.MonoBehaviour:StartCoroutine(String) (at C:\buildslave\unity\build\artifacts\generated\common\runtime\UnityEngineMonoBehaviourBindings.gen.cs:76)
+SaveManager:Awake() (at C:\Users\bean9\Documents\New3DRPG\Assets\Scripts\SaveManager.cs:26)
+ 
+(Filename: /Users/builduser/buildslave/mono/build/mcs/class/corlib/System.IO/FileStream.cs Line: 354)
+
+System memory in use before: 37.8 MB.
+System memory in use after: 37.9 MB.
+
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 1793.
+Total: 0.733206 ms (FindLiveObjects: 0.094421 ms CreateObjectMapping: 0.067326 ms MarkObjects: 0.555446 ms  DeleteObjects: 0.014779 ms)
+
+Sphere
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+SerializableChest:set_MyItems(List`1) (at C:\Users\bean9\Documents\New3DRPG\Assets\Scripts\LootChest.cs:137)
+SerializableChest:.ctor(List`1, Int32) (at C:\Users\bean9\Documents\New3DRPG\Assets\Scripts\LootChest.cs:163)
+LootChest:Start() (at C:\Users\bean9\Documents\New3DRPG\Assets\Scripts\LootChest.cs:47)
+ 
+(Filename: C:/Users/bean9/Documents/New3DRPG/Assets/Scripts/LootChest.cs Line: 137)
+
+Capsule
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+SerializableChest:set_MyItems(List`1) (at C:\Users\bean9\Documents\New3DRPG\Assets\Scripts\LootChest.cs:137)
+SerializableChest:.ctor(List`1, Int32) (at C:\Users\bean9\Documents\New3DRPG\Assets\Scripts\LootChest.cs:163)
+LootChest:Start() (at C:\Users\bean9\Documents\New3DRPG\Assets\Scripts\LootChest.cs:47)
+ 
+(Filename: C:/Users/bean9/Documents/New3DRPG/Assets/Scripts/LootChest.cs Line: 137)
+
+Capsule
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+SerializableChest:set_MyItems(List`1) (at C:\Users\bean9\Documents\New3DRPG\Assets\Scripts\LootChest.cs:137)
+SerializableChest:.ctor(List`1, Int32) (at C:\Users\bean9\Documents\New3DRPG\Assets\Scripts\LootChest.cs:163)
+LootChest:Start() (at C:\Users\bean9\Documents\New3DRPG\Assets\Scripts\LootChest.cs:47)
+ 
+(Filename: C:/Users/bean9/Documents/New3DRPG/Assets/Scripts/LootChest.cs Line: 137)
+
+Cube
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+SerializableChest:set_MyItems(List`1) (at C:\Users\bean9\Documents\New3DRPG\Assets\Scripts\LootChest.cs:137)
+SerializableChest:.ctor(List`1, Int32) (at C:\Users\bean9\Documents\New3DRPG\Assets\Scripts\LootChest.cs:163)
+LootChest:Start() (at C:\Users\bean9\Documents\New3DRPG\Assets\Scripts\LootChest.cs:47)
+ 
+(Filename: C:/Users/bean9/Documents/New3DRPG/Assets/Scripts/LootChest.cs Line: 137)
+
+Sphere
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+SerializableChest:set_MyItems(List`1) (at C:\Users\bean9\Documents\New3DRPG\Assets\Scripts\LootChest.cs:137)
+SerializableChest:.ctor(List`1, Int32) (at C:\Users\bean9\Documents\New3DRPG\Assets\Scripts\LootChest.cs:163)
+LootChest:Start() (at C:\Users\bean9\Documents\New3DRPG\Assets\Scripts\LootChest.cs:47)
+ 
+(Filename: C:/Users/bean9/Documents/New3DRPG/Assets/Scripts/LootChest.cs Line: 137)
+
+Cube
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+SerializableChest:set_MyItems(List`1) (at C:\Users\bean9\Documents\New3DRPG\Assets\Scripts\LootChest.cs:137)
+SerializableChest:.ctor(List`1, Int32) (at C:\Users\bean9\Documents\New3DRPG\Assets\Scripts\LootChest.cs:163)
+LootChest:Start() (at C:\Users\bean9\Documents\New3DRPG\Assets\Scripts\LootChest.cs:47)
+ 
+(Filename: C:/Users/bean9/Documents/New3DRPG/Assets/Scripts/LootChest.cs Line: 137)
+
+Sphere
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+SerializableChest:set_MyItems(List`1) (at C:\Users\bean9\Documents\New3DRPG\Assets\Scripts\LootChest.cs:137)
+SerializableChest:.ctor(List`1, Int32) (at C:\Users\bean9\Documents\New3DRPG\Assets\Scripts\LootChest.cs:163)
+LootChest:Start() (at C:\Users\bean9\Documents\New3DRPG\Assets\Scripts\LootChest.cs:47)
+ 
+(Filename: C:/Users/bean9/Documents/New3DRPG/Assets/Scripts/LootChest.cs Line: 137)
+
+Capsule
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+SerializableChest:set_MyItems(List`1) (at C:\Users\bean9\Documents\New3DRPG\Assets\Scripts\LootChest.cs:137)
+SerializableChest:.ctor(List`1, Int32) (at C:\Users\bean9\Documents\New3DRPG\Assets\Scripts\LootChest.cs:163)
+LootChest:Start() (at C:\Users\bean9\Documents\New3DRPG\Assets\Scripts\LootChest.cs:47)
+ 
+(Filename: C:/Users/bean9/Documents/New3DRPG/Assets/Scripts/LootChest.cs Line: 137)
+
+Capsule
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+SerializableChest:set_MyItems(List`1) (at C:\Users\bean9\Documents\New3DRPG\Assets\Scripts\LootChest.cs:137)
+SerializableChest:.ctor(List`1, Int32) (at C:\Users\bean9\Documents\New3DRPG\Assets\Scripts\LootChest.cs:163)
+LootChest:Start() (at C:\Users\bean9\Documents\New3DRPG\Assets\Scripts\LootChest.cs:47)
+ 
+(Filename: C:/Users/bean9/Documents/New3DRPG/Assets/Scripts/LootChest.cs Line: 137)
+
+Capsule
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+SerializableChest:set_MyItems(List`1) (at C:\Users\bean9\Documents\New3DRPG\Assets\Scripts\LootChest.cs:137)
+SerializableChest:.ctor(List`1, Int32) (at C:\Users\bean9\Documents\New3DRPG\Assets\Scripts\LootChest.cs:163)
+LootChest:Start() (at C:\Users\bean9\Documents\New3DRPG\Assets\Scripts\LootChest.cs:47)
+ 
+(Filename: C:/Users/bean9/Documents/New3DRPG/Assets/Scripts/LootChest.cs Line: 137)
+
+Cube
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+SerializableChest:set_MyItems(List`1) (at C:\Users\bean9\Documents\New3DRPG\Assets\Scripts\LootChest.cs:137)
+SerializableChest:.ctor(List`1, Int32) (at C:\Users\bean9\Documents\New3DRPG\Assets\Scripts\LootChest.cs:163)
+LootChest:Start() (at C:\Users\bean9\Documents\New3DRPG\Assets\Scripts\LootChest.cs:47)
+ 
+(Filename: C:/Users/bean9/Documents/New3DRPG/Assets/Scripts/LootChest.cs Line: 137)
+
+Cube
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+SerializableChest:set_MyItems(List`1) (at C:\Users\bean9\Documents\New3DRPG\Assets\Scripts\LootChest.cs:137)
+SerializableChest:.ctor(List`1, Int32) (at C:\Users\bean9\Documents\New3DRPG\Assets\Scripts\LootChest.cs:163)
+LootChest:Start() (at C:\Users\bean9\Documents\New3DRPG\Assets\Scripts\LootChest.cs:47)
+ 
+(Filename: C:/Users/bean9/Documents/New3DRPG/Assets/Scripts/LootChest.cs Line: 137)
+
+Cube
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+SerializableChest:set_MyItems(List`1) (at C:\Users\bean9\Documents\New3DRPG\Assets\Scripts\LootChest.cs:137)
+SerializableChest:.ctor(List`1, Int32) (at C:\Users\bean9\Documents\New3DRPG\Assets\Scripts\LootChest.cs:163)
+LootChest:Start() (at C:\Users\bean9\Documents\New3DRPG\Assets\Scripts\LootChest.cs:47)
+ 
+(Filename: C:/Users/bean9/Documents/New3DRPG/Assets/Scripts/LootChest.cs Line: 137)
+
+Capsule
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+SerializableChest:set_MyItems(List`1) (at C:\Users\bean9\Documents\New3DRPG\Assets\Scripts\LootChest.cs:137)
+SerializableChest:.ctor(List`1, Int32) (at C:\Users\bean9\Documents\New3DRPG\Assets\Scripts\LootChest.cs:163)
+LootChest:Start() (at C:\Users\bean9\Documents\New3DRPG\Assets\Scripts\LootChest.cs:47)
+ 
+(Filename: C:/Users/bean9/Documents/New3DRPG/Assets/Scripts/LootChest.cs Line: 137)
+
+Sphere
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+SerializableChest:set_MyItems(List`1) (at C:\Users\bean9\Documents\New3DRPG\Assets\Scripts\LootChest.cs:137)
+SerializableChest:.ctor(List`1, Int32) (at C:\Users\bean9\Documents\New3DRPG\Assets\Scripts\LootChest.cs:163)
+LootChest:Start() (at C:\Users\bean9\Documents\New3DRPG\Assets\Scripts\LootChest.cs:47)
+ 
+(Filename: C:/Users/bean9/Documents/New3DRPG/Assets/Scripts/LootChest.cs Line: 137)
+
+Capsule
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+SerializableChest:set_MyItems(List`1) (at C:\Users\bean9\Documents\New3DRPG\Assets\Scripts\LootChest.cs:137)
+SerializableChest:.ctor(List`1, Int32) (at C:\Users\bean9\Documents\New3DRPG\Assets\Scripts\LootChest.cs:163)
+LootChest:Start() (at C:\Users\bean9\Documents\New3DRPG\Assets\Scripts\LootChest.cs:47)
+ 
+(Filename: C:/Users/bean9/Documents/New3DRPG/Assets/Scripts/LootChest.cs Line: 137)
+
+Sphere
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+SerializableChest:set_MyItems(List`1) (at C:\Users\bean9\Documents\New3DRPG\Assets\Scripts\LootChest.cs:137)
+SerializableChest:.ctor(List`1, Int32) (at C:\Users\bean9\Documents\New3DRPG\Assets\Scripts\LootChest.cs:163)
+LootChest:Start() (at C:\Users\bean9\Documents\New3DRPG\Assets\Scripts\LootChest.cs:47)
+ 
+(Filename: C:/Users/bean9/Documents/New3DRPG/Assets/Scripts/LootChest.cs Line: 137)
+
+Cube
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+SerializableChest:set_MyItems(List`1) (at C:\Users\bean9\Documents\New3DRPG\Assets\Scripts\LootChest.cs:137)
+SerializableChest:.ctor(List`1, Int32) (at C:\Users\bean9\Documents\New3DRPG\Assets\Scripts\LootChest.cs:163)
+LootChest:Start() (at C:\Users\bean9\Documents\New3DRPG\Assets\Scripts\LootChest.cs:47)
+ 
+(Filename: C:/Users/bean9/Documents/New3DRPG/Assets/Scripts/LootChest.cs Line: 137)
+
+Sphere
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+SerializableChest:set_MyItems(List`1) (at C:\Users\bean9\Documents\New3DRPG\Assets\Scripts\LootChest.cs:137)
+SerializableChest:.ctor(List`1, Int32) (at C:\Users\bean9\Documents\New3DRPG\Assets\Scripts\LootChest.cs:163)
+LootChest:Start() (at C:\Users\bean9\Documents\New3DRPG\Assets\Scripts\LootChest.cs:47)
+ 
+(Filename: C:/Users/bean9/Documents/New3DRPG/Assets/Scripts/LootChest.cs Line: 137)
+
+Capsule
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+SerializableChest:set_MyItems(List`1) (at C:\Users\bean9\Documents\New3DRPG\Assets\Scripts\LootChest.cs:137)
+SerializableChest:.ctor(List`1, Int32) (at C:\Users\bean9\Documents\New3DRPG\Assets\Scripts\LootChest.cs:163)
+LootChest:Start() (at C:\Users\bean9\Documents\New3DRPG\Assets\Scripts\LootChest.cs:47)
+ 
+(Filename: C:/Users/bean9/Documents/New3DRPG/Assets/Scripts/LootChest.cs Line: 137)
+
+Capsule
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+SerializableChest:set_MyItems(List`1) (at C:\Users\bean9\Documents\New3DRPG\Assets\Scripts\LootChest.cs:137)
+SerializableChest:.ctor(List`1, Int32) (at C:\Users\bean9\Documents\New3DRPG\Assets\Scripts\LootChest.cs:163)
+LootChest:Start() (at C:\Users\bean9\Documents\New3DRPG\Assets\Scripts\LootChest.cs:47)
+ 
+(Filename: C:/Users/bean9/Documents/New3DRPG/Assets/Scripts/LootChest.cs Line: 137)
+
+Sphere
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+SerializableChest:set_MyItems(List`1) (at C:\Users\bean9\Documents\New3DRPG\Assets\Scripts\LootChest.cs:137)
+SerializableChest:.ctor(List`1, Int32) (at C:\Users\bean9\Documents\New3DRPG\Assets\Scripts\LootChest.cs:163)
+LootChest:Start() (at C:\Users\bean9\Documents\New3DRPG\Assets\Scripts\LootChest.cs:47)
+ 
+(Filename: C:/Users/bean9/Documents/New3DRPG/Assets/Scripts/LootChest.cs Line: 137)
+
+Sphere
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+SerializableChest:set_MyItems(List`1) (at C:\Users\bean9\Documents\New3DRPG\Assets\Scripts\LootChest.cs:137)
+SerializableChest:.ctor(List`1, Int32) (at C:\Users\bean9\Documents\New3DRPG\Assets\Scripts\LootChest.cs:163)
+LootChest:Start() (at C:\Users\bean9\Documents\New3DRPG\Assets\Scripts\LootChest.cs:47)
+ 
+(Filename: C:/Users/bean9/Documents/New3DRPG/Assets/Scripts/LootChest.cs Line: 137)
+
+Capsule
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+SerializableChest:set_MyItems(List`1) (at C:\Users\bean9\Documents\New3DRPG\Assets\Scripts\LootChest.cs:137)
+SerializableChest:.ctor(List`1, Int32) (at C:\Users\bean9\Documents\New3DRPG\Assets\Scripts\LootChest.cs:163)
+LootChest:Start() (at C:\Users\bean9\Documents\New3DRPG\Assets\Scripts\LootChest.cs:47)
+ 
+(Filename: C:/Users/bean9/Documents/New3DRPG/Assets/Scripts/LootChest.cs Line: 137)
+
+Cube
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+SerializableChest:set_MyItems(List`1) (at C:\Users\bean9\Documents\New3DRPG\Assets\Scripts\LootChest.cs:137)
+SerializableChest:.ctor(List`1, Int32) (at C:\Users\bean9\Documents\New3DRPG\Assets\Scripts\LootChest.cs:163)
+LootChest:Start() (at C:\Users\bean9\Documents\New3DRPG\Assets\Scripts\LootChest.cs:47)
+ 
+(Filename: C:/Users/bean9/Documents/New3DRPG/Assets/Scripts/LootChest.cs Line: 137)
+
+Sphere
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+SerializableChest:set_MyItems(List`1) (at C:\Users\bean9\Documents\New3DRPG\Assets\Scripts\LootChest.cs:137)
+SerializableChest:.ctor(List`1, Int32) (at C:\Users\bean9\Documents\New3DRPG\Assets\Scripts\LootChest.cs:163)
+LootChest:Start() (at C:\Users\bean9\Documents\New3DRPG\Assets\Scripts\LootChest.cs:47)
+ 
+(Filename: C:/Users/bean9/Documents/New3DRPG/Assets/Scripts/LootChest.cs Line: 137)
+
+Sphere
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+SerializableChest:set_MyItems(List`1) (at C:\Users\bean9\Documents\New3DRPG\Assets\Scripts\LootChest.cs:137)
+SerializableChest:.ctor(List`1, Int32) (at C:\Users\bean9\Documents\New3DRPG\Assets\Scripts\LootChest.cs:163)
+LootChest:Start() (at C:\Users\bean9\Documents\New3DRPG\Assets\Scripts\LootChest.cs:47)
+ 
+(Filename: C:/Users/bean9/Documents/New3DRPG/Assets/Scripts/LootChest.cs Line: 137)
+
+Capsule
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+SerializableChest:set_MyItems(List`1) (at C:\Users\bean9\Documents\New3DRPG\Assets\Scripts\LootChest.cs:137)
+SerializableChest:.ctor(List`1, Int32) (at C:\Users\bean9\Documents\New3DRPG\Assets\Scripts\LootChest.cs:163)
+LootChest:Start() (at C:\Users\bean9\Documents\New3DRPG\Assets\Scripts\LootChest.cs:47)
+ 
+(Filename: C:/Users/bean9/Documents/New3DRPG/Assets/Scripts/LootChest.cs Line: 137)
+
+Cube
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+SerializableChest:set_MyItems(List`1) (at C:\Users\bean9\Documents\New3DRPG\Assets\Scripts\LootChest.cs:137)
+SerializableChest:.ctor(List`1, Int32) (at C:\Users\bean9\Documents\New3DRPG\Assets\Scripts\LootChest.cs:163)
+LootChest:Start() (at C:\Users\bean9\Documents\New3DRPG\Assets\Scripts\LootChest.cs:47)
+ 
+(Filename: C:/Users/bean9/Documents/New3DRPG/Assets/Scripts/LootChest.cs Line: 137)
+
+Sphere
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+SerializableChest:set_MyItems(List`1) (at C:\Users\bean9\Documents\New3DRPG\Assets\Scripts\LootChest.cs:137)
+SerializableChest:.ctor(List`1, Int32) (at C:\Users\bean9\Documents\New3DRPG\Assets\Scripts\LootChest.cs:163)
+LootChest:Start() (at C:\Users\bean9\Documents\New3DRPG\Assets\Scripts\LootChest.cs:47)
+ 
+(Filename: C:/Users/bean9/Documents/New3DRPG/Assets/Scripts/LootChest.cs Line: 137)
+
+Capsule
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+SerializableChest:set_MyItems(List`1) (at C:\Users\bean9\Documents\New3DRPG\Assets\Scripts\LootChest.cs:137)
+SerializableChest:.ctor(List`1, Int32) (at C:\Users\bean9\Documents\New3DRPG\Assets\Scripts\LootChest.cs:163)
+LootChest:Start() (at C:\Users\bean9\Documents\New3DRPG\Assets\Scripts\LootChest.cs:47)
+ 
+(Filename: C:/Users/bean9/Documents/New3DRPG/Assets/Scripts/LootChest.cs Line: 137)
+
+Sphere
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+SerializableChest:set_MyItems(List`1) (at C:\Users\bean9\Documents\New3DRPG\Assets\Scripts\LootChest.cs:137)
+SerializableChest:.ctor(List`1, Int32) (at C:\Users\bean9\Documents\New3DRPG\Assets\Scripts\LootChest.cs:163)
+LootChest:Start() (at C:\Users\bean9\Documents\New3DRPG\Assets\Scripts\LootChest.cs:47)
+ 
+(Filename: C:/Users/bean9/Documents/New3DRPG/Assets/Scripts/LootChest.cs Line: 137)
+
+Capsule
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+SerializableChest:set_MyItems(List`1) (at C:\Users\bean9\Documents\New3DRPG\Assets\Scripts\LootChest.cs:137)
+SerializableChest:.ctor(List`1, Int32) (at C:\Users\bean9\Documents\New3DRPG\Assets\Scripts\LootChest.cs:163)
+LootChest:Start() (at C:\Users\bean9\Documents\New3DRPG\Assets\Scripts\LootChest.cs:47)
+ 
+(Filename: C:/Users/bean9/Documents/New3DRPG/Assets/Scripts/LootChest.cs Line: 137)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.863754 ms
+System memory in use before: 37.7 MB.
+System memory in use after: 37.8 MB.
+
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1143.
+Total: 0.589931 ms (FindLiveObjects: 0.063221 ms CreateObjectMapping: 0.062811 ms MarkObjects: 0.421614 ms  DeleteObjects: 0.041052 ms)
+
