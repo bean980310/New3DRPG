@@ -31,17 +31,19 @@ public class AI : MonoBehaviour {
             {
                 transform.LookAt(MoveVector);
                 Controller.v = 2;
-                if (Vector3.Distance(transform.position, MoveVector) < 0.2f)
-                {
-                    GeneratedVector = false;
-                }
-                if (!GeneratedVector)
-                {
-                    float x = Random.Range(0, 10);
-                    float z = Random.Range(0, 10);
+
+                //if (Vector3.Distance(transform.position, MoveVector) < 0.2f)
+                //{
+                    //GeneratedVector = false;
+                //}
+                //if (!GeneratedVector)
+                //{
+                    WayPoint wp = PathManager.Instance.FindClosestWaypoint(transform);
+                    float x = wp.transform.position.x;
+                    float z = wp.transform.position.z;
                     MoveVector = new Vector3(x, 0, z);
-                    GeneratedVector = true;
-                }
+                    //GeneratedVector = true;
+                //}
             }
         }
 	}

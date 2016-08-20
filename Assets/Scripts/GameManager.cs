@@ -59,7 +59,7 @@ public class GameManager : MonoBehaviour {
             Time.timeScale = 1;
         }
 
-        if (Input.GetKey(KeyCode.Escape))
+        if (Input.GetKey(KeyCode.F4))
         {
             Application.LoadLevel("Title");
         }

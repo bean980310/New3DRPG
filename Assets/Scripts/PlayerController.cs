@@ -99,4 +99,9 @@ public class PlayerController : MonoBehaviour {
             Anim.SetBool("Jumping", false);
         }
 	}
+
+    void OnDrawGizmo()
+    {
+        Gizmos.DrawLine(transform.position, PathManager.Instance.FindClosestWaypoint(transform).transform.position);
+    }
 }
