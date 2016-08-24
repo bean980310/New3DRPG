@@ -17,6 +17,8 @@ public class PlayerController : MonoBehaviour {
     public float v;
     public float h;
 
+    public bool AIRunning;
+
     public List<Item> Inventory
     {
         get
@@ -85,7 +87,10 @@ public class PlayerController : MonoBehaviour {
         {
             v = Input.GetAxis("Vertical");
             h = Input.GetAxis("Horizontal");
-            Anim.SetFloat("Speed", v * 2);
+            //if (Input.GetKey(KeyCode.LeftShift))
+            //    Anim.SetFloat("Speed", v + 1);
+            //else
+                Anim.SetFloat("Speed", v * 2);
             Anim.SetFloat("Direction", h);
             Anim.SetBool("Running", Input.GetKey(KeyCode.LeftShift));
             Anim.SetBool("Jumping", Input.GetKeyDown(KeyCode.Space));
@@ -93,15 +98,18 @@ public class PlayerController : MonoBehaviour {
         }
         else
         {
-            Anim.SetFloat("Speed", v);
+            //if (AIRunning)
+            //    Anim.SetFloat("Speed", v + 1);
+            //else
+                Anim.SetFloat("Speed", v * 2);
             Anim.SetFloat("Direction", h);
             Anim.SetBool("Running", false);
             Anim.SetBool("Jumping", false);
         }
-	}
-
-    void OnDrawGizmo()
-    {
-        Gizmos.DrawLine(transform.position, PathManager.Instance.FindClosestWaypoint(transform).transform.position);
     }
+
+    //void OnDrawGizmo()
+    //{
+    //    Gizmos.DrawLine(transform.position, PathManager.Instance.FindClosestWaypoint(transform).transform.position);
+    //}
 }

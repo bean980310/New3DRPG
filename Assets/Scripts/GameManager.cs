@@ -6,6 +6,8 @@ using UnityStandardAssets.Utility;
 public class GameManager : MonoBehaviour {
     public List<Character> Characters = new List<Character>();
     public List<Item> AllItems = new List<Item>();
+    //public List<Location> PossibleLocations = new List<Location>();
+    public Location[] PossibleLocations;
     public LootChest[] AllChests;
     public Character CurrentCharacter;
     bool ShowCharWheel;
@@ -19,6 +21,7 @@ public class GameManager : MonoBehaviour {
     {
         Instance = this;
         AllChests = FindObjectsOfType<LootChest>();
+        PossibleLocations = FindObjectsOfType<Location>();
         foreach (Character c in Characters)
         {
             GameObject go = Instantiate(c.PlayerPrefab, c.HomeSpawn.position, c.HomeSpawn.rotation) as GameObject;
@@ -122,6 +125,18 @@ public class GameManager : MonoBehaviour {
             if(i.Name==ItemName)
             {
                 return i;
+            }
+        }
+        return null;
+    }
+
+    public Location FindLocationOfType(LocationType i)
+    {
+        foreach(Location l in PossibleLocations)
+        {
+            if(l.Type==i)
+            {
+                return l;
             }
         }
         return null;
