@@ -101,7 +101,7 @@ public class PlayerController : MonoBehaviour {
             //if (AIRunning)
             //    Anim.SetFloat("Speed", v + 1);
             //else
-                Anim.SetFloat("Speed", v * 2);
+                Anim.SetFloat("Speed", v);
             Anim.SetFloat("Direction", h);
             Anim.SetBool("Running", false);
             Anim.SetBool("Jumping", false);
