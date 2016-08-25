@@ -93,13 +93,18 @@ public class PlayerController : MonoBehaviour {
                 Anim.SetFloat("Speed", v * 2);
             Anim.SetFloat("Direction", h);
             Anim.SetBool("Running", Input.GetKey(KeyCode.LeftShift));
-            Anim.SetBool("Jumping", Input.GetKeyDown(KeyCode.Space));
             Anim.SetBool("Jumping", Input.GetKey(KeyCode.Space));
+            //Anim.SetBool("Jumping", Input.GetKeyUp(KeyCode.Space));
 
             Anim.SetBool("Punch", Input.GetKeyDown(KeyCode.Z));
+            Anim.SetBool("WalkPunch", Input.GetKey(KeyCode.Z));
             Anim.SetBool("StrongPunch", Input.GetKeyUp(KeyCode.Z));
+            Anim.SetBool("RunPunch", Input.GetKey(KeyCode.Z));
+            Anim.SetBool("SPPunch", Input.GetKey(KeyCode.Z));
 
             Anim.SetBool("Kick", Input.GetKey(KeyCode.X));
+            Anim.SetBool("StrongKick", Input.GetKey(KeyCode.LeftControl));
+            Anim.SetBool("Crouch", Input.GetKey(KeyCode.V));
         }
         else
         {
