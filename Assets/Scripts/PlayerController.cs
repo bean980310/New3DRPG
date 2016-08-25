@@ -95,7 +95,11 @@ public class PlayerController : MonoBehaviour {
             Anim.SetBool("Running", Input.GetKey(KeyCode.LeftShift));
             Anim.SetBool("Jumping", Input.GetKeyDown(KeyCode.Space));
             Anim.SetBool("Jumping", Input.GetKey(KeyCode.Space));
-            Anim.SetBool("Attack", Input.GetKey(KeyCode.Z));
+
+            Anim.SetBool("Punch", Input.GetKeyDown(KeyCode.Z));
+            Anim.SetBool("StrongPunch", Input.GetKeyUp(KeyCode.Z));
+
+            Anim.SetBool("Kick", Input.GetKey(KeyCode.X));
         }
         else
         {
