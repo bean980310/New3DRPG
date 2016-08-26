@@ -12,4 +12,9 @@ public class HealthManager : MonoBehaviour {
 	void Update () {
 	
 	}
+
+    void OnGUI()
+    {
+
+    }
 }
