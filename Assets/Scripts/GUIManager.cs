@@ -1,7 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 public class GUIManager : MonoBehaviour {
+
     public int InventoryColumns = 7;
     public int InventoryRows = 6;
     public int ButtonWidth = 32;
@@ -19,12 +21,14 @@ public class GUIManager : MonoBehaviour {
     }
 	
 	// Update is called once per frame
-	void Update () {
+	void Update () {      
         if (Input.GetKeyDown(KeyCode.I))
         {
             ShowInventory = !ShowInventory;
         }
+        
 	}
+
     void OnGUI()
     {
         if (ShowInventory)
