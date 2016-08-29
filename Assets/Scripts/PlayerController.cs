@@ -103,7 +103,7 @@ public class PlayerController : MonoBehaviour {
             Anim.SetBool("SPPunch", Input.GetKey(KeyCode.Z));
 
             Anim.SetBool("Kick", Input.GetKey(KeyCode.X));
-            Anim.SetBool("StrongKick", Input.GetKey(KeyCode.LeftControl));
+            Anim.SetBool("StrongKick", Input.GetKey(KeyCode.LeftAlt));
             Anim.SetBool("Crouch", Input.GetKey(KeyCode.V));
         }
         else

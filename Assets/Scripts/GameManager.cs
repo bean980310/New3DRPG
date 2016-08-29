@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour {
         }
         ChangeCharacterStart(Characters[PlayerPrefs.GetInt("SelectedChar")]);
 
-        //SaveManager.Instance.Load();
+        SaveManager.Instance.Load();
     }
 	// Use this for initialization
 	void Start () {
@@ -62,10 +62,10 @@ public class GameManager : MonoBehaviour {
             Time.timeScale = 1;
         }
 
-        if (Input.GetKey(KeyCode.F4))
-        {
-            Application.LoadLevel("Title");
-        }
+        //if (Input.GetKey(KeyCode.F4))
+        //{
+        //    Application.LoadLevel("Title");
+        //}
 	}
     void ChangeCharacterStart(Character c)
     {

@@ -56,6 +56,10 @@ public class GUIManager : MonoBehaviour {
         {
             SaveManager.Instance.Save();
         }
+        if (GUI.Button(new Rect(0, 200, 225, 50), "Go to title"))
+        {
+            Application.LoadLevel("Title");
+        }
     }
     void InventoryWindow(int id)
     {

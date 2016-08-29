@@ -23,7 +23,7 @@ public class SceneManager : MonoBehaviour {
         }
         if (GUI.Button(new Rect(150, 300, 225, 50), "Setting") == true)
         {
-            
+            Application.LoadLevel("Setting");
         }
         if (GUI.Button(new Rect(150, 375, 225, 50), "Exit") == true)
         {
