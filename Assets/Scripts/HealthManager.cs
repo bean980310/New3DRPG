@@ -61,13 +61,13 @@ public class HealthManager : MonoBehaviour {
     void OnGUI()
     {
         //Icons for GUI
-        GUI.Box(new Rect(5, 130, 40, 20), "HP");
-        GUI.Box(new Rect(5, 150, 40, 20), "MP");
+        GUI.Box(new Rect(5, 150, 40, 20), "HP");
+        GUI.Box(new Rect(5, 170, 40, 20), "MP");
         //GUI.Box(new Rect(5, 170, 40, 20), "SP");
 
         //Main bars for GUI
-        GUI.Box(new Rect(45, 130, barLength, 20), curHealth.ToString("0") + "/" + maxHealth);
-        GUI.Box(new Rect(45, 150, barLength, 20), curMana.ToString("0") + "/" + maxMana);
+        GUI.Box(new Rect(45, 150, barLength, 20), curHealth.ToString("0") + "/" + maxHealth);
+        GUI.Box(new Rect(45, 170, barLength, 20), curMana.ToString("0") + "/" + maxMana);
         //GUI.Box(new Rect(45, 170, barLength, 20), curStamina.ToString("0") + "/" + maxStamina);
     }
     public void AdjustCurMana(int adj)

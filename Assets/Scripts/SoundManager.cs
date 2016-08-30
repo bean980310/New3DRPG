@@ -25,7 +25,7 @@ public class SoundManager : MonoBehaviour {
         musicVol = (int)GUI.HorizontalSlider(new Rect(225, 225, 100, 30), musicVol, 0.0f, 10.0f);
         GUI.Label(new Rect(150, 225, 100, 30), "Music : " + musicVol);
 
-        if (GUI.Button(new Rect(150, 375, 225, 50), "Back"))
+        if (GUI.Button(new Rect(150, 450, 225, 50), "Back"))
         {
             Application.LoadLevel("Setting");
         }

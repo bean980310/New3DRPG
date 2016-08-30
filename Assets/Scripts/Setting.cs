@@ -18,7 +18,7 @@ public class Setting : MonoBehaviour {
         {
             //Application.LoadLevel("Display");
         }
-        if (GUI.Button(new Rect(150, 375, 225, 50), "Back"))
+        if (GUI.Button(new Rect(150, 450, 225, 50), "Back"))
         {
             Application.LoadLevel("Title");
         }

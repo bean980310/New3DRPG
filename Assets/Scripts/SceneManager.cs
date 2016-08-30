@@ -9,23 +9,23 @@ public class SceneManager : MonoBehaviour {
     void OnGUI()
     {
         GUI.skin = start;
-        if(GUI.Button(new Rect(150,150,100,50),"Game Start")==true)
+        if(GUI.Button(new Rect(150,150,225,50),"Game Start")==true)
         {
             Application.LoadLevel("Start");
         }
-        if (GUI.Button(new Rect(275, 150, 100, 50), "Netplay Game") == true)
+        if (GUI.Button(new Rect(150, 225, 225, 50), "Netplay Game") == true)
         {
             Application.LoadLevel("NetworkMenu");
         }
-        if (GUI.Button(new Rect(150, 225, 225, 50), "Shop") == true)
+        if (GUI.Button(new Rect(150, 300, 225, 50), "Shop") == true)
         {
             
         }
-        if (GUI.Button(new Rect(150, 300, 225, 50), "Setting") == true)
+        if (GUI.Button(new Rect(150, 375, 225, 50), "Setting") == true)
         {
             Application.LoadLevel("Setting");
         }
-        if (GUI.Button(new Rect(150, 375, 225, 50), "Exit") == true)
+        if (GUI.Button(new Rect(150, 450, 225, 50), "Exit") == true)
         {
             Application.Quit();
         }

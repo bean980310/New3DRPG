@@ -33,7 +33,7 @@ public class VideoManager : MonoBehaviour {
         fieldOfView = (int)GUI.HorizontalSlider(new Rect(225, 100, 100, 30), fieldOfView, 30, 120);
         GUI.Label(new Rect(150, 100, 100, 30), "FOV : " + fieldOfView);
 
-        if (GUI.Button(new Rect(150, 375, 225, 50), "Back"))
+        if (GUI.Button(new Rect(150, 450, 225, 50), "Back"))
         {
             Application.LoadLevel("Setting");
         }
