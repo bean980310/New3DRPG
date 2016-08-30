@@ -9,14 +9,14 @@ public class SceneManager : MonoBehaviour {
     void OnGUI()
     {
         GUI.skin = start;
-        if(GUI.Button(new Rect(150,150,225,50),"Game Start")==true)
+        if(GUI.Button(new Rect(150,150,100,50),"Game Start")==true)
         {
             Application.LoadLevel("Start");
         }
-        //if (GUI.Button(new Rect(625, 250, 100, 50), "Netplay Game") == true)
-        //{
-        //    Debug.Log("Netplay contents is not ready yet!");
-        //}
+        if (GUI.Button(new Rect(275, 150, 100, 50), "Netplay Game") == true)
+        {
+            Application.LoadLevel("NetworkMenu");
+        }
         if (GUI.Button(new Rect(150, 225, 225, 50), "Shop") == true)
         {
             
@@ -28,6 +28,10 @@ public class SceneManager : MonoBehaviour {
         if (GUI.Button(new Rect(150, 375, 225, 50), "Exit") == true)
         {
             Application.Quit();
+        }
+        if(GUI.Button(new Rect(Screen.width/1.3f, Screen.height/1.2f, 225, 50), "Credit") == true)
+        {
+            //Application.LoadLevel("Credit");
         }
     }
 }
