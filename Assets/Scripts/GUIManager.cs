@@ -52,7 +52,7 @@ public class GUIManager : MonoBehaviour {
         {
             GUI.Box(new Rect(Screen.width - Screen.width / 7.5f, 0, Screen.width / 7.5f, Screen.height / 8.4f), new GUIContent("Selected Item : \nNone"));
         }
-        if(GUI.Button(new Rect(0, 0, 128, 128), "Save"))
+        if(GUI.Button(new Rect(0, 0, 100, 40), "Save"))
         {
             SaveManager.Instance.Save();
         }
