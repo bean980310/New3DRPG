@@ -47,15 +47,15 @@ public class PlayerController : MonoBehaviour {
                 InHandInstance = Instantiate(value.InstancePrefab.gameObject, Hand.position, Hand.rotation) as GameObject;
                 InHandInstance.transform.parent = Hand;
             }
-            if (GameManager.Instance.Characters.IndexOf(LocalCharacter) == 0)
+            if (CharacterManager.Instance.Characters.IndexOf(LocalCharacter) == 0)
             {
                 SaveManager.Instance.p1_Hand = InHand;
             }
-            if (GameManager.Instance.Characters.IndexOf(LocalCharacter) == 1)
+            if (CharacterManager.Instance.Characters.IndexOf(LocalCharacter) == 1)
             {
                 SaveManager.Instance.p2_Hand = InHand;
             }
-            if (GameManager.Instance.Characters.IndexOf(LocalCharacter) == 2)
+            if (CharacterManager.Instance.Characters.IndexOf(LocalCharacter) == 2)
             {
                 SaveManager.Instance.p3_Hand = InHand;
             }
@@ -67,15 +67,15 @@ public class PlayerController : MonoBehaviour {
     void Start () {
         //SaveManager.Instance.SaveObj.Add(InHand);
         //SaveManager.Instance.SaveObj.Add(Inventory);
-        if (GameManager.Instance.Characters.IndexOf(LocalCharacter) == 0)
+        if (CharacterManager.Instance.Characters.IndexOf(LocalCharacter) == 0)
         {
             SaveManager.Instance.P1_Inventory = Inventory;
         }
-        if (GameManager.Instance.Characters.IndexOf(LocalCharacter) == 1)
+        if (CharacterManager.Instance.Characters.IndexOf(LocalCharacter) == 1)
         {
             SaveManager.Instance.P2_Inventory = Inventory;
         }
-        if (GameManager.Instance.Characters.IndexOf(LocalCharacter) == 2)
+        if (CharacterManager.Instance.Characters.IndexOf(LocalCharacter) == 2)
         {
             SaveManager.Instance.P3_Inventory = Inventory;
         }

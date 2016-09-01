@@ -10,7 +10,7 @@ public class Weapon : MonoBehaviour {
 	void Start () {
         if (TypeOfWeapon == WeaponType.Gun)
         {
-            SpawnPoint = GameManager.Instance.CurrentCharacter.Instance.GunSpawnPoint;
+            SpawnPoint = CharacterManager.Instance.CurrentCharacter.Instance.GunSpawnPoint;
         }
 	}
 	

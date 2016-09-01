@@ -40,8 +40,8 @@ public class LootChest : MonoBehaviour {
         ItemCount = Random.Range(1, MaxItems);
         for (int i = 0; i < ItemCount; i++)
         {
-            int r = Random.Range(0, GameManager.Instance.AllItems.Count - 1);
-            Items.Add(GameManager.Instance.AllItems[r]);
+            int r = Random.Range(0, CharacterManager.Instance.AllItems.Count - 1);
+            Items.Add(CharacterManager.Instance.AllItems[r]);
         }
         DefaultColour = GetComponent<Renderer>().material.color;
         SChest = new SerializableChest(MyItems, ID);
@@ -52,7 +52,7 @@ public class LootChest : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Vector3.Distance(transform.position, GameManager.Instance.CurrentCharacter.Instance.transform.position) > Distance)
+        if (Vector3.Distance(transform.position, CharacterManager.Instance.CurrentCharacter.Instance.transform.position) > Distance)
             OnMouseExit();
 
         if (Selected)
@@ -72,13 +72,13 @@ public class LootChest : MonoBehaviour {
         foreach (string str in i)
         {
             MyItems.Clear();
-            Items.Add(GameManager.Instance.FindItem(str));
+            Items.Add(CharacterManager.Instance.FindItem(str));
         }
         UpdateSC();
     }
     void OnMouseOver()
     {
-        if (Vector3.Distance(transform.position, GameManager.Instance.CurrentCharacter.Instance.transform.position) < Distance)
+        if (Vector3.Distance(transform.position, CharacterManager.Instance.CurrentCharacter.Instance.transform.position) < Distance)
         {
             GetComponent<Renderer>().material.color = HoverColour;
         }
@@ -90,10 +90,10 @@ public class LootChest : MonoBehaviour {
     }
     void OnMouseDown()
     {
-        if (Vector3.Distance(transform.position, GameManager.Instance.CurrentCharacter.Instance.transform.position) < Distance)
+        if (Vector3.Distance(transform.position, CharacterManager.Instance.CurrentCharacter.Instance.transform.position) < Distance)
         {
             Selected = true;
-            GameManager.Instance.SelectedChest = this;
+            CharacterManager.Instance.SelectedChest = this;
         }
             //GetComponent<Renderer>().material.color = ClickColour;
     }
@@ -101,7 +101,7 @@ public class LootChest : MonoBehaviour {
     void DeSelect()
     {
         Selected = false;
-        GameManager.Instance.SelectedChest = null;
+        CharacterManager.Instance.SelectedChest = null;
     }
     //void OnMouseUp()
     //{

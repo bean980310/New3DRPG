@@ -32,7 +32,7 @@ public class SequenceManager : MonoBehaviour {
             {
                 Camera.main.GetComponent<SmoothFollow>().target = c.Instance.transform;
                 CharSwitch.Follower.height = 2;
-                GameManager.Instance.CanShowSwitch = true;
+                CharacterManager.Instance.CanShowSwitch = true;
                 if ((int)CharSwitch.Follower.transform.position.y != 2)
                     yield return new WaitForEndOfFrame();
             }

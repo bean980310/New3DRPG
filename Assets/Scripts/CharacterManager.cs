@@ -3,17 +3,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityStandardAssets.Utility;
 
-public class GameManager : MonoBehaviour {
+public class CharacterManager : MonoBehaviour
+{
     public List<Character> Characters = new List<Character>();
     public List<Item> AllItems = new List<Item>();
     //public List<Location> PossibleLocations = new List<Location>();
     public Location[] PossibleLocations;
     public LootChest[] AllChests;
     public Character CurrentCharacter;
-    bool ShowCharWheel;
+    public bool ShowCharWheel;
     public int SelectedCharacter;
     int LastCharacter;
-    public static GameManager Instance;
+    public static CharacterManager Instance;
     public bool CanShowSwitch = true;
 
     public LootChest SelectedChest;
@@ -29,17 +30,17 @@ public class GameManager : MonoBehaviour {
             c.Instance.LocalCharacter = c;
         }
         ChangeCharacterStart(Characters[PlayerPrefs.GetInt("SelectedChar")]);
-
-        SaveManager.Instance.Load();
-    }
-	// Use this for initialization
-	void Start () {
         
+    }
+    // Use this for initialization
+    void Start()
+    {
+
     }
 
     public LootChest FindChestWithID(int id)
     {
-        foreach(LootChest lc in AllChests)
+        foreach (LootChest lc in AllChests)
         {
             if (lc.ID == id)
             {
@@ -48,9 +49,10 @@ public class GameManager : MonoBehaviour {
         }
         return null;
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update()
+    {
         if (Input.GetKey(KeyCode.C))
         {
             ShowCharWheel = true;
@@ -66,7 +68,7 @@ public class GameManager : MonoBehaviour {
         //{
         //    Application.LoadLevel("Title");
         //}
-	}
+    }
     void ChangeCharacterStart(Character c)
     {
         LastCharacter = SelectedCharacter;
@@ -77,7 +79,7 @@ public class GameManager : MonoBehaviour {
         Camera.main.GetComponent<SmoothFollow>().target = Characters[SelectedCharacter].Instance.transform;
         PlayerPrefs.SetInt("SelectedChar", SelectedCharacter);
     }
-    void ChangeCharacter(Character c)
+    public void ChangeCharacter(Character c)
     {
         c.Instance.GetComponent<AI>().DoneHome = false;
         if (Vector3.Distance(Characters[SelectedCharacter].Instance.transform.position, c.Instance.transform.position) > 10)
@@ -99,18 +101,18 @@ public class GameManager : MonoBehaviour {
             Characters[LastCharacter].Instance.GetComponent<PlayerController>().CanPlay = false;
             Characters[SelectedCharacter].Instance.GetComponent<PlayerController>().CanPlay = true;
             PlayerPrefs.SetInt("SelectedChar", SelectedCharacter);
-            Camera.main.GetComponent<SmoothFollow>().target = Characters[SelectedCharacter].Instance.transform;     
+            Camera.main.GetComponent<SmoothFollow>().target = Characters[SelectedCharacter].Instance.transform;
         }
     }
 
     void OnGUI()
     {
-        if (ShowCharWheel && CanShowSwitch) 
+        if (ShowCharWheel && CanShowSwitch)
         {
             GUILayout.BeginArea(new Rect(Screen.width - 64, Screen.height - 192, 64, 192));
-            foreach(Character c in Characters)
+            foreach (Character c in Characters)
             {
-                if (GUILayout.Button(c.Icon,GUILayout.Width(64),GUILayout.Height(64)))
+                if (GUILayout.Button(c.Icon, GUILayout.Width(64), GUILayout.Height(64)))
                 {
                     ChangeCharacter(c);
                 }
@@ -120,9 +122,9 @@ public class GameManager : MonoBehaviour {
     }
     public Item FindItem(string ItemName)
     {
-        foreach(Item i in AllItems)
+        foreach (Item i in AllItems)
         {
-            if(i.Name==ItemName)
+            if (i.Name == ItemName)
             {
                 return i;
             }
@@ -132,9 +134,9 @@ public class GameManager : MonoBehaviour {
 
     public Location FindLocationOfType(LocationType i)
     {
-        foreach(Location l in PossibleLocations)
+        foreach (Location l in PossibleLocations)
         {
-            if(l.Type==i)
+            if (l.Type == i)
             {
                 return l;
             }
