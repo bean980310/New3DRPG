@@ -31,7 +31,7 @@ public class SceneManager : MonoBehaviour {
         }
         if(GUI.Button(new Rect(Screen.width/1.3f, Screen.height/1.2f, 225, 50), "Credit") == true)
         {
-            //Application.LoadLevel("Credit");
+            Application.LoadLevel("Credit");
         }
     }
 }
